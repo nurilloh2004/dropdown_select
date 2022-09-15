@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<select  name="course" id="flats1" hx-get = "{% url 'modules' %}" hx-trigger = "change" hx-target = "#modules">
+    <option selected>Select one of these</option>
+    {% for course in courses %}
+        <option value="{{course.pk}}">{{course.name}}</option>
+    {% endfor %}
+</select>
+<div id="modules">
+    {% include 'modules.html' %}
+</div>
+{% endblock %}
