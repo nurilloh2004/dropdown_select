@@ -10,4 +10,9 @@ def courses(request):
 def modules(request):
     course = request.GET.get('course')
     modules = Module.objects.filter(course=course)
-    return render(request, 'modules.html', context={'modules':modules})  
+    return render(request, 'home.html', context={'modules':modules})  
+
+def rooms(request):
+    modules = request.GET.get('modules')
+    rooms = Room.objects.filter(modules=modules)
+    return render(request, 'modules.html', context={'rooms':rooms})  

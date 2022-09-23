@@ -7,7 +7,13 @@
         <option value="{{course.pk}}">{{course.name}}</option>
     {% endfor %}
 </select>
-<div id="modules">
+<select name="module" id="flats2" hx-get = "{% url 'rooms' %}" hx-trigger = "change" hx-target = "#rooms">
+    {% for module in modules %}
+        <option value="{{module.pk}}">{{module.name}}</option>
+    {% endfor %}
+</select>
+<div id="rooms">
     {% include 'modules.html' %}
 </div>
+
 {% endblock %}

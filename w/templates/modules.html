@@ -1,6 +1,12 @@
-
-<select>
+<!-- 
+<select name="module" id="flats1" hx-get = "{% url 'rooms' %}" hx-trigger = "change" hx-target = "#rooms">
     {% for module in modules %}
         <option value="{{module.pk}}">{{module.name}}</option>
+    {% endfor %}
+</select> -->
+
+<select>
+    {% for room in rooms %}
+        <option value="{{room.pk}}">{{module.name}}</option>
     {% endfor %}
 </select>

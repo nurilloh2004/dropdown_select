@@ -11,4 +11,4 @@ class Module(models.Model):
 
 class Room(models.Model):
     name = models.CharField(max_length=125)
-    module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='modules')
+    module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='room')
